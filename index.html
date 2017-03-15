@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="searchInJson">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <script src="angular.js"></script>
+	  <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body>
+   <div class="container container" ng-controller="NarrowItDownController as list">
+
+      <div class="row">
+        <h1 class="text-primary">Narrow Down Your Chinese Menu Choice</h1>
+
+        <div class="form-group">
+          <input ng-model="list.searchTerm" type="text" placeholder="search term" class="form-control">
+        </div>
+        <div class="form-group narrow-button">
+          <button class="btn btn-success" ng-click="list.getMatchedMenuItems()">Narrow It Down For Me!</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- found-items should be implemented as a component -->
+        <found-items items="list.founded" error-message="list.errorMessage" on-remove="list.removeItem(index)"></found-items>
+      </div>
+
+    </div>
+
+</body>
+</html>

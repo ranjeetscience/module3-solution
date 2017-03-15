@@ -1,0 +1,21 @@
+
+<div>
+
+<table class="table">
+  <tr ng-repeat="item in items">
+    <td>
+      <b>{{ item.name }}</b>
+    </td>
+    <td>
+      ({{ item.short_name }})
+     </td>
+     <td>
+       {{ item.description }}
+     </td>
+     <td>
+        <button class="btn btn-danger" ng-click="onRemove({index: $index});">I don't want this!</button>
+    </td>
+  </tr>
+</table>
+</div>
+<span ng-if="errorMessage" class="text-danger">Nothing found!</span>
