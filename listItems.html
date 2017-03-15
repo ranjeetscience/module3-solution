@@ -1,6 +1,6 @@
-
+<span ng-if="errorMessage" class="alert alert-danger">Nothing found!</span>
 <div>
-
+<div ng-if="items.length > 0" class="alert alert-success"> {{items.length}} items Found</div>
 <table class="table">
   <tr ng-repeat="item in items">
     <td>
@@ -18,4 +18,3 @@
   </tr>
 </table>
 </div>
-<span ng-if="errorMessage" class="text-danger">Nothing found!</span>
